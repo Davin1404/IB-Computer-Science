@@ -59,6 +59,9 @@ class BankAccount{
   - **Mechanism**: The compiler distinguishes overloaded methods at compile time based on method type, parameter type, and parameter name.
 - **Override (Dynamic Polymorphism)**
   - **Definition**: Overriding is a form of dynamic polymorphism in which a subclass redefines or rewrites methods inherited from the parent class to suit its specific requirements.
+-  **Advantages** of using ***Polymorphism***  
+   - Polymorphism allows an external program to use the same method actions on all subclasses;
+   - By allowing overridden functions in child classes to add only the code that is needed for the unique processing of that sub-class;
 
 ### Encapsulation
 
@@ -87,6 +90,15 @@ class BankAccount{
   - **Accessor and Mutator Methods**: Encapsulation necessitates the use of accessor (get) and mutator (set) methods, which control how other classes access and modify the private variables of an object. These methods provide a controlled interface for interacting with the object's data.
   - **Combining Data and Methods**: Encapsulation involves bundling data (variables) and methods (functions) into a single class. This combination promotes a cohesive and organized approach to managing data, making it easier to understand and work with the class.
   - **Code Reusability**: Encapsulation facilitates code reusability by encapsulating data and methods within a class. This means the same class can create multiple instances with different data, reducing the need to duplicate code for similar functionality.
+- ***Advantages*** of using ***Encapsulation***  
+  - Encapsulation places all ***attributes*** and ***methods*** that relate to a ***particular*** object;
+    - For example, `Payment` class includes attributes such as the food and drink arrays and method such as `calculateBill()`;
+    - This provides a clearer view of view/understanding of each section of the problem;
+    - Which can lead to more efficient programming (faster and less errors).  
+  - Encapsulations ***protects*** the values of the data stored within the object;  
+    - From ***accidental changes*** made by other classes;  
+    - For example, quantity in the `FoorItem` class cannot be altered through another variable called quantity in another class; 
+    - This allows programmers to select ***any*** variable names they wish on choice of variable names. 
 
 ## Relationships
 
@@ -127,7 +139,7 @@ Inheritance is an object-oriented programming concept in which **a new class, kn
   - **Reduces the Amount of Coding:** Inheritance significantly minimizes the need for repetitive code. This efficiency is achieved as subclasses can inherit methods and attributes from their superclass.
   - **Facilitates Code Reusability:** Through inheritance, several subclasses can effectively inherit characteristics from a single superclass. This approach promotes code reusability.
   - **Enables Specific Characteristic Addition:** Subclasses have the capability to not only inherit characteristics from their superclass but also to add specific characteristics unique to themselves. This is often achieved by overriding existing methods, allowing for tailored functionality within each subclass.
-- **Disadvantages***
+- **Disadvantages**
   - **Overhead:** Inheritance can lead to unnecessary methods being inherited, which might not be useful for the subclass.
   - **Modification Propagation:** Changes in the parent class can have unintended consequences in subclasses.
   - **Tight Coupling:** Subclasses are closely tied to parent classes, making the system more rigid and less modular.
@@ -153,3 +165,81 @@ Inheritance is an object-oriented programming concept in which **a new class, kn
   - **Pre-written Components:** They consist of pre-written code, classes, procedures, methods, and other programming elements.
   - **Facilitates Code Reuse:** Software libraries support code reuse, allowing programmers to integrate complex functionalities into their programs **without the need to rewrite equivalent code from scratch**.
   - **Efficiency in Development:** Programmers can select appropriate object classes or functions from the library, thereby bypassing the need to design, implement, and test these components individually. This significantly streamlines the development process, enhancing productivity and reducing time to deployment.
+
+# Data Structure
+
+# Stack
+
+### Definition
+FILO (first in last out) data structure.  
+
+>#### Applications:  
+>The system stack stores return data of interrupted processes; The last interrupted process is the first to resume. 
+>
+>Return addresses (for subroutines) might be placed on a stack;
+>Stacks are used in evaluating expressions;  
+>Stacks are used in translating from one computer language to another;  
+>All processing is based on the Last-In-First-Out (LIFO) policy;   
+
+# Queue
+### Definition
+FIFO (first in first out) data structure, only allowss addition at the end and removal from the front.  
+
+### Advantages of using "***Queue***"
+*(empty)*
+
+### Disadvantages of using "***Queue***"
+* This is not sufficient in scenarios that elements can ***change freely***;  
+* Because it is a ***FIFO data structure*** / only allows addition at the end and removal from the front;
+* It has no ***fixed length*** which could lead to ***unmanageable***;
+
+>#### Applications:  
+>Key strokes from a keyboard would be placed in a queue;  
+>Items from processor/memory to output to a peripheral device would be place in a queue;  
+>Programs which are ready to run are placed in a queue;  
+>Queues are used in simulation processes;  
+>Supports remove and insert operations using FIFO (First-In-First-Out) mode;  
+
+# ArrayList 
+
+### Definition
+*(empty)*
+
+### Advantages of using "***ArrayList***"
+* Memory space for the exact number of objects can be assigned.
+    
+* There is no need to determine ArrayList size.  
+
+### Disadvantages of using "***ArrayList***"
+* Using a ***fixed*** amount of memory is inefficient;  
+  * as it will ***re-size*** itself when more entries are required.  
+
+* ***Overflow*** is a problem;  
+  * as there is a ***fixed*** amounts of element allowed.  
+
+# LinkedList
+
+* Java-specific data structure  
+
+* Doubly-linked list (although sometimes referred to as a singly-linked list on the exam)
+* Each piece of data is stored in a node, with pointers
+* Located non-contiguously in memory - addresses of nodes are spread out across RAM and nodes only linked by pointers
+* Ideal for frequent insertion or deletion of elements, or when the size of the list is unknown
+* Ideal Use Cases
+  * Implementing a Queue - front of the queue is represented by the head of the Linked List, and the rear of the queue is represented by the tail of the Linked List.  
+
+  * Implementing a Stack - top of the stack is represented by the head of the Linked List, and the bottom of the stack is represented by the tail of the Linked List
+  * Large Data Sets (due to dynamic memory allocation)
+
+|Pros|Cons|
+|---|---|
+|***Dynamic Size*** - Unlike arrays, linked lists can grow or shrink in size|***Access Time*** - Finding a specific value in a linked list takes longer than in an array|
+|***Easy Insertion and Deletion*** - easy to insert and delete elements from linked list; simply invovlves changing points of adjacent nodes|***Extra memory overhead*** - pointers are utilized, which take up more memory than a single array element|  
+|***Efficient memory usage*** - memory is only allocated for elements in the linked list unlike arrays|***Complexity*** - linked lists can be more difficult to implement and debug than simple data structures like arrays|
+|***Versatility*** - can be used to implement other data structures like stacks and queues||
+
+### Replace a data structure to ***LinkedList***
+* Modify the class to have a “next” member variable (next element pointer);  
+  
+* Modify the first class to have a “first” member variable (begin element pointer);  
+* Modify the `add()` and `remove()` methods to implement the linked list;

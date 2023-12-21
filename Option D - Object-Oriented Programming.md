@@ -4,21 +4,20 @@
 
 ```mermaid
 classDiagram
-Animal --|> Mammal : Inheritance (is a)
+direction LR
+Animal <|-- Mammal : Inheritance (is a)
 Driver ..> Vehicle : Dependency (uses a)
-Person --o Dog : Aggregation (has a)
-Car --* Engine : Composition (has a)
-Library --> Book : Association
-Interface ..|> Implementation : Realization
+Person o-- Dog : Aggregation (has a)
 ```
 
 ```mermaid
 classDiagram
-class BankAccount
-BankAccount : +#nbsp;String#nbsp;#58;#nbsp;owner
-BankAccount : -#nbsp;balance#nbsp;#58;#nbsp;BigDecimal
-BankAccount : +#nbsp;deposit#nbsp;#58;#nbsp;void#nbsp;(amount#nbsp;#58;#nbsp;int)
-BankAccount : -#nbsp;withdrawal#nbsp;#58;#nbsp;void#nbsp;(amount#nbsp;#58;#nbsp;int)
+class BankAccount{
+	+owner : String
+	-balance : BigDecimal
+	+deposit(amount : int) void
+	-withdrawal(amount : int) void
+}
 ```
 
 # Object-Oriented Programming
@@ -142,7 +141,7 @@ Inheritance is an object-oriented programming concept in which **a new class, kn
   - **Nature of Argument:** At the time of the call, the argument can be an actual value or a variable.
   - **Behavior with Variables:** If the argument is a variable, a copy of the variable's current value is passed into the subroutine.
   - **Effect on Original Variable:** Changes made within the subroutine do not affect the value of the variable in the calling program. The original variable remains unchanged.
-- **Pass by Reference (ByRef):**
+- **Pass by Reference:**
   - **Requirement for Arguments:** The argument must be a variable at the time of the call.
   - **Mechanism:** A pointer to the memory location of the variable is passed into the procedure.
   - **Effect on Original Variable:** Any modifications to the variable within the procedure are reflected in the original variable in the calling program or module. This means changes inside the procedure directly alter the variable's contents outside.
